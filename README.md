@@ -1,4 +1,4 @@
-# nos_listes
+# listit
 
 A shopping list sharing app for family members
 
