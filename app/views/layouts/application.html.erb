@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railsapps</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+    <%= yield :head %>
+    <%= turbo_include_tags %>
+    <%= stimulus_include_tags %>
+  </head>
+
+  <body>
+    <%= render "layouts/navigation" %>
+    <p id="notice"><%= notice %></p>
+    <%= yield %>
+  </body>
+</html>
