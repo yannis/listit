@@ -44,3 +44,5 @@ group :development do
 end
 
 gem "sidekiq", "~> 6.1"
+
+gem "noticed", "~> 1.2"
