@@ -1,6 +1,32 @@
+<header data-controller="navigation">
+  <div class="flex items-center justify-between py-3">
+    <div>
+      <i class="far fa-list-alt mt-1 mr-1 text-lg"></i>
+      <%= link_to "ListIt", root_path, class: "flex-auto font-mono text-lg font mt-1" %>
+    </div>
+    <div>
+      <button class="block focus:outline-none" data-action="click->navigation#toggleMenu">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path data-navigation-target="iconClose" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+          <path data-navigation-target="iconOpen" class="hidden" fill-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="pb-6 text-center hidden" data-navigation-target="menu">
+    <%= link_to "Lists", lists_path, class: "block py-1" %>
+    <%= link_to "Sharings", "#", class: "block py-1" %>
+    <%= link_to "Français", { locale: :fr }, class: "block py-1" %>
+    <% if user_signed_in? %>
+      <p class="block py-5 text-gray-600">
+        Signed in as <%= current_user.email %> |
+        <%= link_to('Log Out', destroy_user_session_path, method: 'delete', class: "dropdown-item", target: :_top) %>
+      </p>
+    <% end %>
+  </div>
+</header>
 
-<% if user_signed_in? %>
-  <%= link_to 'Lists', lists_path %> |
-  <%= current_user.email %> |
-  <%= link_to('Log Out', destroy_user_session_path, method: 'delete', class: "dropdown-item") %>
-<% end %>
+
+<nav class="flex">
+
+</nav>

@@ -9,7 +9,6 @@ module Devise
         return if params[:user].blank?
 
         user = User.find_by(email: params[:user][:email])
-
         if user&.update(login_token: SecureRandom.hex(10),
                         login_token_valid_until: Time.current + 60.minutes)
           # url = Rails.application.routes.url_helpers.email_confirmation_url(login_token: user.login_token)

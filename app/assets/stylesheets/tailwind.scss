@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+a {
+  @apply text-indigo-700 underline;
+}
+
+[type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+  @apply inline-block px-5 py-2 text-sm ring-1;
+  &:focus, &:active {
+    @apply inline-block px-5 py-2 text-sm ring-1;
+  }
+}
+
+.btn {
+  @apply inline-block px-5 py-2 text-sm uppercase tracking-wider bg-indigo-500 text-white ring-1;
+  &:focus {
+    @apply inline-block px-5 py-2 text-sm uppercase tracking-wider bg-indigo-500 text-white ring-1;
+  }
+}
+
+// .btn:focus {
+//   @apply outline-none;
+// }
+
+// .btn-indigo {
+//   @apply bg-indigo-500 text-white;
+// }
+
+// .btn-indigo:hover {
+//   @apply bg-indigo-400;
+// }
+
+// .btn-indigo:active {
+//   @apply bg-indigo-600;
+// }
+
+// .btn-gray {
+//   @apply bg-gray-400 text-gray-800;
+// }
+
+// .btn-gray:hover {
+//   @apply bg-gray-300;
+// }
+
+// .btn-gray:active {
+//   @apply bg-gray-500;
+// }
+
+@import "tailwindcss/utilities";

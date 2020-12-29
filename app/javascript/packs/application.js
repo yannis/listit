@@ -5,6 +5,8 @@
 
 import Rails from "@rails/ujs"
 import * as ActiveStorage from "@rails/activestorage"
+import "@fortawesome/fontawesome-free/css/all.css";
+require("./../../assets/stylesheets/tailwind.scss")
 
 Rails.start()
 ActiveStorage.start()
