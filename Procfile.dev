@@ -1,0 +1,3 @@
+webpacker: bin/webpack-dev-server
+worker: bundle exec sidekiq -C config/sidekiq.yml
+# browser-sync: browser-sync start --proxy localhost:3000 --files "app/assets/stylesheets/*.scss, app/views/*/**/*.html.erb"

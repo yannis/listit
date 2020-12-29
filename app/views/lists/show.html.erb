@@ -1,0 +1,12 @@
+<%= turbo_stream_from(@list) %>
+<%= turbo_frame_tag(dom_id(@list)) do %>
+  <h1>
+    <%= @list.name %> | <small><%= link_to 'edit', edit_list_path(@list) %></small>
+  </h1>
+<% end %>
+
+<%= turbo_stream_from(@list, :items) %>
+<%= render "items/form", item: Item.new(list: @list) %>
+<%= turbo_frame_tag("items") do %>
+  <%= render @items %>
+<% end %>

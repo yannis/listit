@@ -1,0 +1,8 @@
+---
+:concurrency: 5
+:queues:
+  - [default,1]
+  - [active_storage_purge,1]
+  - [active_storage_analysis,1]
+  - [mailers,2]
+  - [critical,3]
