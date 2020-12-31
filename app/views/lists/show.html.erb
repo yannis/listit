@@ -1,12 +1,14 @@
 <%= turbo_stream_from(@list) %>
 <%= turbo_frame_tag(dom_id(@list)) do %>
-  <h1>
-    <%= @list.name %> | <small><%= link_to 'edit', edit_list_path(@list) %></small>
-  </h1>
-<% end %>
+  <div class="flex justify-between">
+    <h1 class="text-3xl">
+      <%= @list.name %>
+    </h1>
+    <%= link_to edit_list_path(@list) do %>
+      <i class="fas fa-cog mt-1 mr-1 text-lg"></i>
+    <% end %>
+  </div>
 
-<%= turbo_stream_from(@list, :items) %>
-<%= render "items/form", item: Item.new(list: @list) %>
-<%= turbo_frame_tag("items") do %>
-  <%= render @items %>
+  <%= render "items/form", item: Item.new(list: @list) %>
+  <%= render "items", list: @list, items: @items %>
 <% end %>

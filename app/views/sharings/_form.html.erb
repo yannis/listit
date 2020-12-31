@@ -1,0 +1,18 @@
+<%= form_with(model: [sharing.list, sharing], id: dom_id(sharing), class: "mt-4") do |form| %>
+  <% if sharing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sharing.errors.count, "error") %> prohibited this sharing from being saved:</h2>
+
+      <ul>
+        <% sharing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.email_field :email, placeholder: "User E-mail" %>
+    <%= form.submit "Share list", class: "btn" %>
+  </div>
+<% end %>

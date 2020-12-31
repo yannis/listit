@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :lists do
-    resources :items
+    resources :items do
+      resource :cross, only: %i[create destroy]
+    end
+    resources :sharings, only: %i[new create destroy]
   end
 
   mount Sidekiq::Web => "/jobs"

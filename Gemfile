@@ -43,6 +43,19 @@ group :development do
   gem "spring"
 end
 
+group :test do
+  gem "capybara"
+  gem "capybara-screenshot"
+  gem "rails-controller-testing", "~> 1.0"
+  gem "rspec-retry"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
+  gem "timecop"
+  gem "vcr", "~> 6.0"
+  gem "webdrivers"
+  gem "webmock", "~> 3.11"
+end
+
 gem "sidekiq", "~> 6.1"
 
 gem "noticed", "~> 1.2"

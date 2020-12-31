@@ -8,6 +8,9 @@ class Ability
     if user.persisted?
       can :manage, List, user: user
       can :manage, Item, list: { user: user }
+      can :manage, Item, list: { sharings: { recipient_id: user, accepted: true } }
+      can :manage, Sharing, sharer: user
+      # can :manage, Sharing, list: { user_id: user }
     end
     # Define abilities for the passed in user here. For example:
     #

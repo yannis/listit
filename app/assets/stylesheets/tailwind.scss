@@ -2,9 +2,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-a {
-  @apply text-indigo-700 underline;
+a:not(.btn) {
+  @apply text-indigo-700;
+  &:hover {
+    @apply underline;
+  }
 }
+
 
 [type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
   @apply inline-block px-5 py-2 text-sm ring-1;

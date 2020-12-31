@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   def index; end
 
   def show
-    @items = @list.items.order(created_at: :desc)
+    @items = @list.items.ordered_for_list
   end
 
   def new; end
