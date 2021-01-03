@@ -1,4 +1,4 @@
-<%= form_with(model: [item.list, item], id: dom_id(item)) do |form| %>
+<%= form_with(model: [item.list, item], id: dom_id(item), class: "mt-4") do |form| %>
   <% if item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -13,6 +13,6 @@
 
   <div class="field">
     <%= form.text_field :name, placeholder: "Item name" %>
-    <%= form.submit %>
+    <%= form.submit "Add item", class: "btn" %>
   </div>
 <% end %>

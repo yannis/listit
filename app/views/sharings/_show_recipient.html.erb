@@ -1,0 +1,21 @@
+<h1 class="text-3xl">
+  List '<%= link_to sharing.list.name, list_path(sharing.list) %>' shared
+</h1>
+
+<p>
+  User <%= sharing.sharer.email %> invited you to share a list.
+</p>
+
+<% if sharing.accepted %>
+  <p>
+    You've started to share this list on <%= sharing.status_at %>.
+  </p>
+  <p>
+    <%= link_to 'Stop sharing', '#' %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to 'Accept invitation', sharing_accept_path(sharing), method: :post, class: "btn" %> or
+    <%= link_to 'Decline', sharing_accept_path(sharing), method: :delete %>
+  </p>
+<% end %>

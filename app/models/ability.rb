@@ -6,8 +6,17 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     if user.persisted?
-      can :manage, List, user: user
       can :manage, Item, list: { user: user }
+      can :manage, Item, list: { sharings: { accepted: true, recipient_id: user.id } }
+
+      can :manage, List, user: user
+      can :manage, List, sharings: { accepted: true, recipient_id: user.id }
+
+      # can :read, Noticed::Notification, recipient: user
+
+      can :manage, Sharing, sharer: user
+      can :read, Sharing, recipient: user
+      # can :manage, Sharing, list: { user_id: user }
     end
     # Define abilities for the passed in user here. For example:
     #

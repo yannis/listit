@@ -1,0 +1,7 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+en:
+  user_mailer:
+    validate_email:
+      subject: "Sign in into %{url}"
+      message: "To sign in in %{url}, please visit this link:"

@@ -1,3 +1,8 @@
 <%= turbo_frame_tag(dom_id(@list, :items)) do %>
   <%= render @items %>
+  <% if @items.empty? %>
+    <p>
+      No items yet
+    </p>
+  <% end %>
 <% end %>

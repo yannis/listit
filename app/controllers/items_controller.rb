@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   load_and_authorize_resource :item, through: :list, param_method: :_item_params
 
   def index
-    @items = @items.order(created_at: :desc)
+    @items = @items.ordered_for_list
   end
 
   def show; end

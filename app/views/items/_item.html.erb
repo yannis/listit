@@ -1,7 +1,13 @@
 <%= turbo_frame_tag(dom_id(item)) do %>
-  <div>
-    <%= item.name %> |
-    <%= link_to 'Edit', edit_list_item_path(item.list, item) %> •
-    <%= link_to 'Destroy', list_item_path(item.list, item), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div class="flex justify-between">
+    <%= link_to item.name, list_item_cross_path(item.list, item), data: { method: (item.crossed? ? :delete : :post) }, class: (item.crossed? ? "line-through" : nil) %>
+    <div>
+      <%= link_to edit_list_item_path(item.list, item) do %>
+        <i class="fas fa-cog mt-1 mr-1"></i>
+      <% end %>
+      <%= link_to list_item_path(item.list, item), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fas fa-trash mt-1 mr-1"></i>
+      <% end %>
+    </div>
   </div>
 <% end %>

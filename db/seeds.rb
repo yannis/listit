@@ -16,15 +16,16 @@ puts 'Creating users'
 end
 
 puts 'Creating lists'
-3.times do |i|
-  User.find_each do |user|
-    user.lists.create!(name: "user_#{user.id}_list_#{i + 1}")
+User.find_each do |user|
+  3.times do |i|
+    user.lists.create!(name: "user_#{user.id} list #{i + 1}")
   end
 end
 
 puts 'Creating items'
-3.times do |i|
-  List.find_each do |list|
-    list.items.create!(name: "#{list.name}_item_#{i + 1}")
+List.find_each do |list|
+  3.times do |i|
+    list.items.create!(name: "#{list.name} item #{i + 1}")
+    list.items.create!(name: "#{list.name} item crossed #{i + 1}", crossed_at: Time.current)
   end
 end

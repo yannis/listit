@@ -1,0 +1,4 @@
+<p>Hi <%= @recipient.email  %>,</p>
+<p><%= t("notifications.new_sharing.message", sharer_email: @sharer.email, list_name: @sharing.list.name) %></p>
+<p><%= t("notifications.new_sharing.email.message") %>: <%= link_to @url, @url %></p>
+<%= render "signature" %>

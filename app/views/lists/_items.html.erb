@@ -1,0 +1,6 @@
+<%= turbo_stream_from(list, :items) %>
+<div class="mt-4">
+  <%= turbo_frame_tag(dom_id(list, :items)) do %>
+    <%= render items %>
+  <% end %>
+</div>

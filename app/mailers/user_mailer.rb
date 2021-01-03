@@ -4,6 +4,6 @@ class UserMailer < ApplicationMailer
   def validate_email(user, url)
     @user = user
     @url  = url
-    mail to: @user.email, subject: "Sign in into mywebsite.com"
+    mail to: @user.email, subject: t(".subject", url: ENV["HOST"])
   end
 end

@@ -1,0 +1,5 @@
+<% if current_user == @sharing.sharer %>
+  <%= render "show_sharer", sharing: @sharing %>
+<% else %>
+  <%= render "show_recipient", sharing: @sharing %>
+<% end %>
