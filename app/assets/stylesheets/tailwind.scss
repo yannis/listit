@@ -2,12 +2,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-a {
-  &:not(.btn), &:not(.btn) {
-    @apply text-indigo-700;
-    &:hover {
-      @apply underline;
-    }
+.link {
+  @apply text-indigo-700;
+  &:hover {
+    @apply underline;
   }
 }
 

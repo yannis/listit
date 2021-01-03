@@ -1,5 +1,5 @@
 <%= turbo_frame_tag(dom_id(item)) do %>
-  <div class="flex justify-between bg-gray-100 my-1 py-1 px-2">
+  <div class="flex justify-between my-1 py-1 px-2 text-gray-400">
     <%= link_to item.name, list_item_cross_path(item.list, item), data: { method: (item.crossed? ? :delete : :post) }, class: (item.crossed? ? "line-through" : nil) %>
     <div>
       <%= link_to edit_list_item_path(item.list, item) do %>

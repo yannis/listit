@@ -2,10 +2,10 @@
   <div class="flex justify-between bg-gray-100 my-1 py-1 px-2">
     <%= link_to item.name, list_item_cross_path(item.list, item), data: { method: (item.crossed? ? :delete : :post) }, class: (item.crossed? ? "line-through" : nil) %>
     <div>
-      <%= link_to edit_list_item_path(item.list, item) do %>
+      <%= link_to edit_list_item_path(item.list, item), class: "link" do %>
         <i class="fas fa-cog mt-1 mr-1"></i>
       <% end %>
-      <%= link_to list_item_path(item.list, item), method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <%= link_to list_item_path(item.list, item), method: :delete, data: { confirm: 'Are you sure?' }, class: "link" do %>
         <i class="fas fa-trash mt-1 mr-1"></i>
       <% end %>
     </div>

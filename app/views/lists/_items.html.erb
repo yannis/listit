@@ -1,6 +1,16 @@
 <%= turbo_stream_from(list, :items) %>
 <div class="mt-4">
   <%= turbo_frame_tag(dom_id(list, :items)) do %>
-    <%= render items %>
+    <div class="">
+      <%= render partial: "items/item_uncrossed", collection: items_uncrossed, as: :item %>
+    </div>
+    <div class="mt-4">
+      <%= render partial: "items/item_crossed", collection: items_crossed, as: :item %>
+    </div>
+    <% if (items_uncrossed + items_crossed).empty? %>
+      <p>
+        No items yet
+      </p>
+    <% end %>
   <% end %>
 </div>

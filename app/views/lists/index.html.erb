@@ -1,5 +1,16 @@
-<h1>Lists</h1>
-
-<%= render @lists %>
-
-<%= link_to 'New List', new_list_path %>
+<div class="flex justify-between align-top">
+  <h1 class="text-3xl">
+    Your lists
+  </h1>
+  <%= link_to new_list_path, class: "link" do %>
+    <i class="fas fa-plus mt-1 mr-1 text-lg"></i>
+  <% end %>
+</div>
+<div class="mt-4">
+  <%= render @lists %>
+  <% if @lists.empty? %>
+    <p>
+      No lists yet
+    </p>
+  <% end %>
+</div>

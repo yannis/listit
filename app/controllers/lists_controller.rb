@@ -6,7 +6,8 @@ class ListsController < ApplicationController
   def index; end
 
   def show
-    @items = @list.items.ordered_for_list
+    @items_uncrossed = @list.items.uncrossed.ordered_for_list
+    @items_crossed = @list.items.crossed.ordered_for_list
   end
 
   def new; end
