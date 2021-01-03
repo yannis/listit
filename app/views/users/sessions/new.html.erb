@@ -1,9 +1,6 @@
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "mt-6" }) do |f| %>
   <div>
     <%= f.email_field :email, autofocus: true, placeholder: "E-mail", autocomplete: "email", required: true %>
-    <%= f.submit "Sign in", class: "btn" %>
+    <%= f.submit "Sign in", class: "btn" %> or <%= link_to "Sign up", new_registration_path(resource_name), class: "link" %>
   </div>
 <% end %>
-<p class="mt-4">
-  or <%= link_to "Sign up", new_registration_path(resource_name) %>
-</p>

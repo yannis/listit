@@ -12,6 +12,6 @@ class CreateSharings < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :sharings, [:recipient, :list_id, :accepted], unique: true
+    add_index :sharings, [:recipient_id, :list_id, :accepted], unique: true
   end
 end
