@@ -6,7 +6,7 @@ class Notification < ApplicationRecord
   belongs_to :recipient, polymorphic: true
 
   after_commit :stream_to_recipient_navigation_badge
-  after_create_commit ->(notification) { broadcast_prepend_to(notification.recipient, :notifications) }
+  after_create_commit ->(notification) { broadcast_prepend_to(notification.recipient, :notifications, target: dom_id(notification.recipient, :notifications)) }
   after_update_commit ->(notification) { broadcast_replace_to(notification.recipient, :notifications) }
   after_destroy_commit ->(notification) { broadcast_remove_to(notification.recipient, :notifications) }
 

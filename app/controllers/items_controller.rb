@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
   load_and_authorize_resource :item, through: :list, param_method: :_item_params
 
   def index
-    @items = @items.ordered_for_list
+    @items_uncrossed = @items.uncrossed.ordered_for_list
+    @items_crossed = @items.crossed.ordered_for_list
   end
 
   def show; end

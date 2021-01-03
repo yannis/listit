@@ -1,6 +1,6 @@
-<header data-controller="navigation">
+<header data-controller="navigation m-6">
   <div class="flex items-center justify-between py-3">
-    <div>
+    <div id="branding">
       <i class="far fa-list-alt mt-1 mr-1 text-lg"></i>
       <%= link_to "ListIt", root_path, class: "flex-auto font-mono text-lg font mt-1" %>
     </div>
@@ -14,7 +14,7 @@
       </button>
     </div>
   </div>
-  <div class="pb-6 text-center hidden" data-navigation-target="menu">
+  <div class="pb-6 text-right hidden" data-navigation-target="menu">
     <%= link_to "Lists", lists_path, class: "block py-1" %>
     <%= link_to "Sharings", "#", class: "block py-1" %>
     <%= link_to "Français", { locale: :fr }, class: "block py-1" %>

@@ -8,6 +8,8 @@ class Item < ApplicationRecord
 
   after_commit :_touch_list_last_used_at, :_stream_to_list
 
+  scope :crossed, -> { where.not(crossed_at: nil) }
+  scope :uncrossed, -> { where(crossed_at: nil) }
   scope :ordered_for_list, -> { order(crossed_at: :desc, created_at: :desc) }
 
   def crossed?
@@ -27,6 +29,10 @@ class Item < ApplicationRecord
   end
 
   private def _stream_to_list
-    broadcast_replace_to(list, :items, target: dom_id(list, :items), partial: "lists/items", locals: { list: list, items: list.items.ordered_for_list })
+    broadcast_replace_to(list, :items, target: dom_id(list, :items),
+                                       partial: "lists/items",
+                                       locals: { list: list,
+                                                 items_uncrossed: list.items.uncrossed.ordered_for_list,
+                                                 items_crossed: list.items.crossed.ordered_for_list })
   end
 end

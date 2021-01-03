@@ -13,6 +13,6 @@
 
   <div class="field">
     <%= form.text_field :name, placeholder: "Item name" %>
-    <%= form.submit "Add item", class: "btn" %>
+    <%= form.submit class: "btn" %> or <%= link_to 'cancel', item.list, class: "link" %>
   </div>
 <% end %>
