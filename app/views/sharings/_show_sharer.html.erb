@@ -1,0 +1,25 @@
+<h1 class="text-3xl">
+  Share list '<%= link_to sharing.list.name, list_path(sharing.list) %>'
+</h1>
+<p>
+  You have shared this list with <%= sharing.recipient.email %>.
+</p>
+
+<% if sharing.accepted %>
+  <p>
+    Your invitation has been accepted on <%= sharing.status_at %>.
+  </p>
+  <p>
+    <%= link_to 'Stop sharing', '#' %>
+  </p>
+<% else %>
+  <p>
+    Your invitation hasn't been accepted yet.
+  </p>
+  <p>
+    <%= link_to 'Cancel invitation', '#' %>
+  </p>
+  <p>
+    <%= link_to 'Resend invitation', '#' %>
+  </p>
+<% end %>

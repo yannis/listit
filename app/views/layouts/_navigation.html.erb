@@ -4,7 +4,8 @@
       <i class="far fa-list-alt mt-1 mr-1 text-lg"></i>
       <%= link_to "ListIt", root_path, class: "flex-auto font-mono text-lg font mt-1" %>
     </div>
-    <div>
+    <div class="flex items-center justify-between">
+      <%= render "layouts/notifications" %>
       <button class="block focus:outline-none" data-action="click->navigation#toggleMenu">
         <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
           <path data-navigation-target="iconClose" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>

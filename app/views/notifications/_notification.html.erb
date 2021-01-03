@@ -1,0 +1,7 @@
+<%= turbo_frame_tag(dom_id(notification)) do %>
+  <div class="border-l-4 pl-4 <%= notification.read? ? 'border-green-500' : 'border-red-500' %> mt-4 mb-4">
+    <p class="italic text-xs"><%= notification.created_at %></p>
+    <%= link_to notification_message(notification), notification_notifiable(notification), target: "_top" %>
+  </div>
+  <hr>
+<% end %>

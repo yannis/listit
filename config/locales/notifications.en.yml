@@ -1,0 +1,19 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+en:
+  notifications:
+    new_sharing:
+      message: "User %{sharer_email} shared a list with you"
+      email:
+        subject: "Someone would like to share a list with you"
+        message: "To accept or decline, please visit the invitation page"
+    accept_sharing:
+      message: "User %{recipient_email} accepted your invitation"
+      email:
+        subject: "Your invitation was accepted"
+        message: "User %{recipient_email} accepted your invitation to share list '%{list_name}'."
+    decline_sharing:
+      message: "User %{recipient_email} declined your invitation"
+      email:
+        subject: "Your invitation was declined"
+        message: "User %{recipient_email} declined your invitation to share list '%{list_name}'."

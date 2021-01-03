@@ -4,7 +4,9 @@ require "rails_helper"
 
 RSpec.describe Sharing, type: :model do
   describe "validations" do
-    let(:list) { build :list }
+    let(:sharing) { build :sharing }
+
+    it { expect(:sharing).to validate_uniqueness_of(:recipient_id).scoped_to([:list, :accepted]) }
 
     describe "email" do
       context "when badly formattef" do

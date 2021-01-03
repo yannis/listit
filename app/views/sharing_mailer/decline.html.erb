@@ -1,0 +1,6 @@
+<p>Hi <%= @sharer.email  %>,</p>
+<p>
+  <%= t("notifications.decline_sharing.email.message", sharer_email: @recipient.email, list_name: @sharing.list.name) %>:
+  <%= link_to @url, @url %>
+</p>
+<%= render "signature" %>

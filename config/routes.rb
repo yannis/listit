@@ -20,6 +20,15 @@ Rails.application.routes.draw do
     resources :sharings, only: %i[new create destroy]
   end
 
+  namespace :notifications do
+    resource :count, only: :show
+  end
+  resources :notifications, only: %i[index show]
+
+  resources :sharings, only: :show do
+    resource :accept, only: %i[create destroy]
+  end
+
   mount Sidekiq::Web => "/jobs"
 
   root to: "lists#index"
