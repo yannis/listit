@@ -1,0 +1,12 @@
+<%- flash.each do |key, value| %>
+  <%-
+    if value.present?
+      fclass = ['alert']
+  %>
+    <div class="<%= fclass.flatten.uniq.compact.join(" ") %>" role="alert">
+      <div class="container">
+        <%= value %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

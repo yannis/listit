@@ -29,7 +29,11 @@ Rails.application.routes.draw do
     resource :accept, only: %i[create destroy]
   end
 
-  mount Sidekiq::Web => "/jobs"
+  mount(LetterOpenerWeb::Engine, at: "/letter_opener") if Rails.env.development?
+
+  constraints CanAccessSidekiq do
+    mount(Sidekiq::Web, at: "/jobs")
+  end
 
   root to: "lists#index"
 end

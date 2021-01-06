@@ -14,8 +14,8 @@ module Devise
           # url = Rails.application.routes.url_helpers.email_confirmation_url(login_token: user.login_token)
           url = Rails.application.routes.url_helpers.sign_in_with_token_url(login_token: user.login_token)
           UserMailer.validate_email(user, url).deliver_now
-          fail!("An email was sent to you with a magic link.")
         end
+        fail!("If we found your address, an email was sent to you with a magic link.")
       end
     end
   end
