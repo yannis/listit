@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :lists do
-    resources :items do
+    resources :items, only: %i[index new edit create update destroy] do
       resource :cross, only: %i[create destroy]
     end
     resources :sharings, only: %i[new create destroy]

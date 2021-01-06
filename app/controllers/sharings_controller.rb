@@ -31,6 +31,11 @@ class SharingsController < ApplicationController
   end
 
   def destroy
+    @sharing.destroy
+    respond_to do |format|
+      format.html { redirect_to list_path(@list), notice: "Sharing was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
   private def _sharing_params

@@ -6,7 +6,7 @@ RSpec.describe Sharing, type: :model do
   describe "validations" do
     let(:sharing) { build :sharing }
 
-    it { expect(:sharing).to validate_uniqueness_of(:recipient_id).scoped_to([:list, :accepted]) }
+    it { expect(sharing).to validate_uniqueness_of(:recipient_id).scoped_to(%i[list_id accepted]) }
 
     describe "email" do
       context "when badly formattef" do
