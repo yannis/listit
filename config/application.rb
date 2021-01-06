@@ -41,5 +41,11 @@ module Listit
     end
 
     config.active_job.queue_adapter = :sidekiq
+
+    if ENV["BASIC_AUTH_USERNAME"] && ENV["BASIC_AUTH_PASSWORD"]
+      config.middleware.use(Rack::Auth::Basic) do |u, p|
+        [u, p] == [ENV["BASIC_AUTH_USERNAME"], ENV["BASIC_AUTH_PASSWORD"]]
+      end
+    end
   end
 end

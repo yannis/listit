@@ -1,12 +1,14 @@
-<%- flash.each do |key, value| %>
-  <%-
-    if value.present?
-      fclass = ['alert']
-  %>
-    <div class="<%= fclass.flatten.uniq.compact.join(" ") %>" role="alert">
-      <div class="container">
-        <%= value %>
+<%= turbo_frame_tag "flash" do %>
+  <%- flash.each do |key, value| %>
+    <%-
+      if value.present?
+        fclass = ['alert']
+    %>
+      <div class="<%= fclass.flatten.uniq.compact.join(" ") %>" role="alert">
+        <div class="container">
+          <%= value %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 <% end %>
